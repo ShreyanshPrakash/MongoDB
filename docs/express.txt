@@ -1,0 +1,30 @@
+
+
+CUSTOM Middleware :
+
+
+If u want to pass data to the middle ware, use res.locals to do so.This is standard
+
+app.use(function(req, res, next) {
+    res.locals.user = req.user;  
+    res.locals.authenticated = !req.user.anonymous;
+    next();
+});
+
+
+Configurable middleware
+If you need your middleware to be configurable, export a function which accepts an options object or other parameters, which, then returns the middleware implementation based on the input parameters.
+
+File: my-middleware.js
+
+module.exports = function (options) {
+  return function (req, res, next) {
+    // Implement the middleware function based on the options object
+    next()
+  }
+}
+The middleware can now be used as shown below.
+
+var mw = require('./my-middleware.js')
+
+app.use(mw({ option1: '1', option2: '2' }))

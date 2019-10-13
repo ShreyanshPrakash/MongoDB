@@ -1,0 +1,28 @@
+{
+  "name": "MongoDB",
+  "version": "1.0.0",
+  "description": "Learning mOngoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShreyanshPrakash/MongoDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShreyanshPrakash/MongoDB/issues"
+  },
+  "homepage": "https://github.com/ShreyanshPrakash/MongoDB#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

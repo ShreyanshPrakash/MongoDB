@@ -1,0 +1,5 @@
+
+
+"C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="c:\data\db" // to start the db
+
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"     // to connect terminal as a client.
