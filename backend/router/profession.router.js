@@ -20,7 +20,6 @@ professionRouter.use( loggerMiddleware, customMiddlewarePayload( {name: "Shreyan
 professionRouter.get( "/doctor/:id", async ( req,res ) => {
 
     let data = await getAllDoctors();
-    console.log( "router ",data );
     res.json({
             message: `Hitting profession as doctor ${req.params.id}`
         })

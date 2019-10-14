@@ -24,7 +24,11 @@ async function getAllDoctors() {
         if (client) {
             let newDb = await client.db('professions');
             let newColl = await newDb.createCollection('doctor');
-            let newDoc = await newColl.insertOne({name: "Shreyansh"});
+            // let newDoc = await newColl.insertOne({name: "Shreyansh"});
+            let allDOcs = await newColl.insertMany(
+                   generateQuery()
+            )
+            generateQuery();
             return newDb;
         }
     } catch (err) {
@@ -35,6 +39,19 @@ async function getAllDoctors() {
 
     }
 
+}
+
+
+function generateQuery(){
+    let docs = [];
+    for( let i = 0; i < 100; i++ ){
+        let newDoc = {};
+        newDoc.name = `Shreyansh-${i}`;
+        newDoc.age = parseInt( Math.random() * 4 + 25 );
+        newDoc.id = parseInt( Math.random() * 12565987 );
+        docs = [ ...docs, newDoc ];
+    }
+    return docs;
 }
 
 module.exports = { getAllDoctors };
